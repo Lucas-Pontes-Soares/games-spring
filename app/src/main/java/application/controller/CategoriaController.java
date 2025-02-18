@@ -2,8 +2,8 @@ package application.controller;
 
 import java.util.Optional;
 
-import org.springframework.benas.factory.annotation.Autowired;
-import org.springframework.benas.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,7 +20,7 @@ public class CategoriaController {
 
     @RequestMapping("/list")
     public String list(Model ui){
-        ui.addAttriute("categorias", categoriaRepo.findAll());
+        ui.addAttribute("categorias", categoriaRepo.findAll());
         return "categoria/list";
     }
 
@@ -42,7 +42,7 @@ public class CategoriaController {
     @RequestMapping("/update")
     public String update(
         @RequestParam("id") long id,
-        Modelo ui
+        Model ui
     ) {
         Optional<Categoria> categoria = categoriaRepo.findById(id);
 
