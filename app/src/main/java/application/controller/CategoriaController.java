@@ -39,7 +39,7 @@ public class CategoriaController {
         return "redirect:/categoria/list";
     }
 
-    @RequestMapping("/update")
+    @RequestMapping("/update") // isso é para o GET, quando carrega a pagina ele chama e preenche os campos
     public String update(
         @RequestParam("id") long id,
         Model ui
@@ -54,7 +54,7 @@ public class CategoriaController {
         return "redirect:/categoria/list";
     }
 
-    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    @RequestMapping(value = "/update", method = RequestMethod.POST) // isso é o POST, quando envia o formulario
     public String update(
         @RequestParam("id") long id,
         @RequestParam("nome") String nome

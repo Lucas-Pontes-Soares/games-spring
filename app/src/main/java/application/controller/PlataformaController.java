@@ -20,7 +20,7 @@ public class PlataformaController {
 
     @RequestMapping("/list")
     public String list(Model ui){
-        ui.addAtribute("plataformas", plataformaRepo.findAll());
+        ui.addAttribute("plataformas", plataformaRepo.findAll());
         return "plataforma/list";
     }
 
@@ -78,7 +78,7 @@ public class PlataformaController {
         Optional<Plataforma> plataforma = plataformaRepo.findById(id);
 
         if(plataforma.isPresent()){
-            ui.addTribute("plataforma", plataforma.get());
+            ui.addAttribute("plataforma", plataforma.get());
             return "plataforma/delte";
         }
 

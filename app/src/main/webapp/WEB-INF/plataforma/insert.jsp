@@ -3,20 +3,19 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>Editar Categoria</title>
+        <title>Nova Plataforma</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
         <div class="container">
-            <h1>Editar Categoria</h1>
-            <form action="/categoria/update" method="post">
-                <input type="hidden" name="id" value="${categoria.id}" />
+            <h1>Nova Plataforma</h1>
+            <form action="/plataforma/insert" method="post">
                 <div class="form-group">
                     <label for="nome">Nome:</label>
-                    <input type="text" name="nome" class="form-control" value="${categoria.nome}" />
+                    <input type="text" name="nome" class="form-control" />
                 </div>
                 <br />
-                <a href="/categoria/list" class="btn btn-primary">Voltar</a>
+                <a href="/plataforma/list" class="btn btn-primary">Voltar</a>
                 <button type="submit" class="btn btn-success">Salvar</button>
             </form>
         </div>
