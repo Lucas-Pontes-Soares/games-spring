@@ -36,7 +36,7 @@ public class Jogo {
     private Set<Plataforma> plataformas = new HashSet<>();
 
     public long getId(){
-        return id;
+        return this.id;
     }
 
     public void setId(long id){
@@ -44,7 +44,7 @@ public class Jogo {
     }
     
     public String getTitulo(){
-        return titulo;
+        return this.titulo;
     }
 
     public void setTitulo(String titulo){
@@ -52,7 +52,7 @@ public class Jogo {
     }
 
     public Categoria getCategoria(){
-        return categoria;
+        return this.categoria;
     }
 
     public void setCategoria(Categoria categoria){
@@ -60,7 +60,7 @@ public class Jogo {
     }
 
     public Set<Plataforma> getPlataformas(){
-        return plataformas;
+        return this.plataformas;
     }
 
     public void setPlataformas(Set<Plataforma> plataformas){

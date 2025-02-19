@@ -25,7 +25,7 @@ public class Categoria {
     private Set<Jogo> jogos = new HashSet<>();
 
     public long getId(){
-        return id;
+        return this.id;
     }
 
     public void setId(long id){
@@ -33,7 +33,7 @@ public class Categoria {
     }
 
     public String getNome(){
-        return nome;
+        return this.nome;
     }
 
     public void setNome(String nome){
@@ -41,7 +41,7 @@ public class Categoria {
     }
 
     public Set<Jogo> getJogos() {
-        return jogos;
+        return this.jogos;
     }
 
     public void setJogos(Set<Jogo> jogos){
