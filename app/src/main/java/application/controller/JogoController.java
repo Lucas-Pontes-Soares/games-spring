@@ -45,9 +45,17 @@ public class JogoController {
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
     public String insert(
         @RequestParam("titulo") String titulo,
-        @RequestParam("categoria") long idCategoria,
-        @RequestParam("plataformas") long[] idsPlataformas
+        @RequestParam(value="categoria", required = false) Long idCategoria,
+        @RequestParam(value="plataformas", required = false) Long[] idsPlataformas
     ) {
+        // Verificações se pelomenos selecionou uma opção para não dar erro
+        if(idsPlataformas == null || idsPlataformas.length == 0) {
+            return "redirect:/jogo/insert";
+        }
+        if(idCategoria == null || idCategoria == 0) {
+            return "redirect:/jogo/insert";
+        }
+
         Jogo jogo = new Jogo();
         jogo.setTitulo(titulo);
         jogo.setCategoria(categoriaRepo.findById(idCategoria).get());
@@ -80,9 +88,17 @@ public class JogoController {
     public String update(
         @RequestParam("id") long id,
         @RequestParam("titulo") String titulo,
-        @RequestParam("categoria") long idCategoria,
-        @RequestParam("plataformas") long[] idsPlataformas
+        @RequestParam(value="categoria", required = false) Long idCategoria,
+        @RequestParam(value="plataformas", required = false) Long[] idsPlataformas
     ) {
+        // Verificações se pelomenos selecionou uma opção para não dar erro
+        if(idsPlataformas == null || idsPlataformas.length == 0) {
+            return "redirect:/jogo/update?id=" + id;
+        }
+        if(idCategoria == null || idCategoria == 0) {
+            return "redirect:/jogo/update?id=" + id;
+        }
+
         Optional<Jogo> jogo = jogoRepo.findById(id);
 
         if(jogo.isPresent()){

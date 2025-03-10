@@ -15,7 +15,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Nome</th>
-                    <th>&nbso;</th>
+                    <th>Ações</th>
                 </tr>
                 <c:forEach var="item" items="${categorias}">
                     <tr>
@@ -23,7 +23,7 @@
                         <td>${item.nome}</td>
                         <td>
                             <a href="/categoria/update?id=${item.id}" class="btn btn-warning">Editar</a>
-                            <a href="/categoria/update?id=${item.id}" class="btn btn-warning">Excluir</a>
+                            <a href="/categoria/delete?id=${item.id}" class="btn btn-warning">Excluir</a>
                         </td>
                     </tr>
                 </c:forEach>

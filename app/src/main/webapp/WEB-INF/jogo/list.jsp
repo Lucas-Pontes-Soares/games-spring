@@ -17,7 +17,7 @@
                     <th>Titulo</th>
                     <th>Categoria</th>
                     <th>Plataformas</th>
-                    <th>&nbso;</th>
+                    <th>Ações</th>
                 </tr>
                 <c:forEach var="item" items="${jogos}">
                     <tr>
@@ -31,8 +31,8 @@
                             </c:forEach>
                         </td>
                         <td>
-                            <a href="/categoria/update?id=${item.id}" class="btn btn-warning">Editar</a>
-                            <a href="/categoria/update?id=${item.id}" class="btn btn-warning">Excluir</a>
+                            <a href="/jogo/update?id=${item.id}" class="btn btn-warning">Editar</a>
+                            <a href="/jogo/delete?id=${item.id}" class="btn btn-warning">Excluir</a>
                         </td>
                     </tr>
                 </c:forEach>

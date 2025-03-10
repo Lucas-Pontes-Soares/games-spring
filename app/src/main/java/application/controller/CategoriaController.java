@@ -30,7 +30,7 @@ public class CategoriaController {
     }
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
-    public String insert(@RequestParam("name") String nome){
+    public String insert(@RequestParam("nome") String nome){
         Categoria categoria = new Categoria();
         categoria.setNome(nome);
 

@@ -79,7 +79,7 @@ public class PlataformaController {
 
         if(plataforma.isPresent()){
             ui.addAttribute("plataforma", plataforma.get());
-            return "plataforma/delte";
+            return "plataforma/delete";
         }
 
         return "redirect:/plataforma/list";
