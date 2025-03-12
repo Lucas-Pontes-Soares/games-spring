@@ -2,26 +2,31 @@ image: gitpod/workspace-mysql
 
 tasks:
   - init: |
-        # Iniciar Docker Compose
-        docker-compose up -d
+      # Iniciar Docker Compose
+      docker-compose up -d
 
-        # Garantir que o MySQL esteja rodando antes de criar o banco
-        while ! mysqladmin ping --host=127.0.0.1 --silent; do sleep 2; done
+      # Garantir que o MySQL esteja rodando antes de criar o banco
+      while ! mysqladmin ping --host=127.0.0.1 --silent; do
+        sleep 2
+      done
 
-        # Criar banco de dados se não existir
-        mysql -u root -e "CREATE DATABASE IF NOT EXISTS applicationdb"
+      # Criar banco de dados se não existir
+      mysql -u root -e "CREATE DATABASE IF NOT EXISTS applicationdb"
 
-        # Instalar e configurar Java 17
-        sudo apt update && sudo apt install -y openjdk-17-jdk
-        echo "export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64" >> ~/.bashrc
-        echo "export PATH=\$JAVA_HOME/bin:\$PATH" >> ~/.bashrc
-        source ~/.bashrc
+      # Instalar e configurar Java 17
+      sudo apt update && sudo apt install -y openjdk-17-jdk
+      echo "export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64" >> ~/.bashrc
+      echo "export PATH=\$JAVA_HOME/bin:\$PATH" >> ~/.bashrc
+      source ~/.bashrc
+
+      # Verificar versão do Java
+      java -version
 
 vscode:
-  extensions:
-    - vscjava.vscode-java-pack
-    - humao.rest-client
-    - vscjava.vscode-gradle
+    extensions:
+      - vscjava.vscode-java-pack
+      - humao.rest-client
+      - vscjava.vscode-gradle
 
 ports:
   - port: 8080
