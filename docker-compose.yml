@@ -7,11 +7,11 @@ services:
     container_name: mysql
     restart: always
     environment:
-      MYSQL_DATABASE: application
+      MYSQL_DATABASE: applicationdb
       MYSQL_USER: appuser
       MYSQL_PASSWORD: apppasswd
       MYSQL_ROOT_PASSWORD: rootpass
     ports:
-      - 3306:3306
+      - 3306:3307
     volumes:
       - ./assets/data:/docker-entrypoint-initdb.d
