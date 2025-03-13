@@ -8,15 +8,20 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
-        <div class="bg-primary text-center py-4 mb-4">
-            <p></p>
-            <a href="/jogo/list" class="text-white mx-3">Jogos</a>
-            <a href="/categoria/list" class="text-white mx-3">Categorias</a>
-            <a href="/plataforma/list" class="text-white mx-3">Plataformas</a>
+        <div class="bg-primary text-white py-4 mb-4 d-flex justify-content-between align-items-center">
+            <p class="mb-0 ms-3"><strong>Games Spring</strong></p>
+            <div class="text-center flex-grow-1">
+                <a href="/jogo/list" class="text-white mx-3">Jogos</a>
+                <a href="/categoria/list" class="text-white mx-3">Categorias</a>
+                <a href="/plataforma/list" class="text-white mx-3">Plataformas</a>
+            </div>
+            <p class="mb-0 me-3"><strong>Lucas Pontes Soares</strong></p>
         </div>
         <div class="container">
-            <h1>Categorias</h1>
-            <a href="/categoria/insert" class="btn btn-primary">Nova Categoria</a>
+            <div class="d-flex justify-content-between align-items-center">
+                <h1 class="mb-0">Categorias</h1>
+                <a href="/categoria/insert" class="btn btn-primary">+ Nova Categoria</a>
+            </div>
             <table class="table">
                 <tr>
                     <th>Id</th>
@@ -29,7 +34,7 @@
                         <td>${item.nome}</td>
                         <td>
                             <a href="/categoria/update?id=${item.id}" class="btn btn-warning">Editar</a>
-                            <a href="/categoria/delete?id=${item.id}" class="btn btn-warning">Excluir</a>
+                            <a href="/categoria/delete?id=${item.id}" class="btn btn-danger">Excluir</a>
                         </td>
                     </tr>
                 </c:forEach>
